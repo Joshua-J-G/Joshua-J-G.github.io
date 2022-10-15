@@ -4,9 +4,9 @@ import './Joshua-J-G.github.io/blob/main/style.css'
 
 const w95faregular = new FontFace('w95faregular', 'url(./Joshua-J-G.github.io/blob/main/src/Fonts/w95fa-webfont.woff)');
 
-import {MainmenuSoftware} from "./Joshua-J-G.github.io/blob/main/JS/SoftwareMenuScript.js";
-import {MainmenuHardware} from "./Joshua-J-G.github.io/blob/main/JS/HardwareMenuScript.js";
-import {MusicMainMenu} from "./Joshua-J-G.github.io/blob/main/JS/MusicMenuScript.js";
+import {MainmenuSoftware} from "./Joshua-J-G.github.io/blob/main/JS/SoftwareMenuScript.mjs";
+import {MainmenuHardware} from "./Joshua-J-G.github.io/blob/main/JS/HardwareMenuScript.mjs";
+import {MusicMainMenu} from "./Joshua-J-G.github.io/blob/main/JS/MusicMenuScript.mjs";
 
 //Lines System
 // 

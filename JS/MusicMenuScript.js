@@ -1,4 +1,4 @@
-import {LoadMenu} from "./Joshua-J-G.github.io/blob/main/JS/Intro.js";
+import {LoadMenu} from "./Joshua-J-G.github.io/blob/main/JS/Intro.mjs";
 
 var enterkey = new Image();
 enterkey.src = "./Joshua-J-G.github.io/blob/main/src/Images/Enter.png";
