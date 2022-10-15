@@ -3,7 +3,7 @@
 var sizeX = 900;
 var sizey = 700;
 
-import {LoadMenu} from "./JS/Intro.js";
+import {LoadMenu} from "./Intro.js";
 
 var enterkey = new Image();
 enterkey.src = "./src/Images/Enter.png";

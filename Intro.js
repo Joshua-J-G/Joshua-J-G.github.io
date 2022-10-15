@@ -4,9 +4,9 @@
 
 const w95faregular = new FontFace('w95faregular', 'url(./src/Fonts/w95fa-webfont.woff)');
 
-import {MainmenuSoftware} from "./JS/SoftwareMenuScript.js";
-import {MainmenuHardware} from "./JS/HardwareMenuScript.js";
-import {MusicMainMenu} from "./JS/MusicMenuScript.js";
+import {MainmenuSoftware} from "./SoftwareMenuScript.js";
+import {MainmenuHardware} from "./HardwareMenuScript.js";
+import {MusicMainMenu} from "./MusicMenuScript.js";
 
 //Lines System
 // 

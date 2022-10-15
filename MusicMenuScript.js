@@ -1,4 +1,4 @@
-import {LoadMenu} from "./JS/Intro.js";
+import {LoadMenu} from "./Intro.js";
 //fix
 var enterkey = new Image();
 enterkey.src = "./src/Images/Enter.png";
