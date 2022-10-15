@@ -1,10 +1,10 @@
-import {LoadMenu} from "/Joshua-J-G.github.io/JS/Intro";
+import {LoadMenu} from "/Joshua-J-G.github.io/blob/main/JS/Intro.js";
 
 var enterkey = new Image();
-enterkey.src = "/Joshua-J-G.github.io/src/Images/Enter.png";
+enterkey.src = "/Joshua-J-G.github.io/blob/main/src/Images/Enter.png";
 
 var ArrowKeys = new Image();
-ArrowKeys.src = "/Joshua-J-G.github.io/src/Images/Full Arrows.png";
+ArrowKeys.src = "/Joshua-J-G.github.io/blob/main/src/Images/Full Arrows.png";
 
 var sizeX = 900;
 var sizey = 700;

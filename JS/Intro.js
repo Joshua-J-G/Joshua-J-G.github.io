@@ -1,12 +1,12 @@
-import '/Joshua-J-G.github.io/style.css'
+import '/Joshua-J-G.github.io/blob/main/style.css'
 
 
 
-const w95faregular = new FontFace('w95faregular', 'url(src/Fonts/w95fa-webfont.woff)');
+const w95faregular = new FontFace('w95faregular', 'url(/Joshua-J-G.github.io/blob/main/src/Fonts/w95fa-webfont.woff)');
 
-import {MainmenuSoftware} from "/Joshua-J-G.github.io/JS/SoftwareMenuScript";
-import {MainmenuHardware} from "/Joshua-J-G.github.io/JS/HardwareMenuScript";
-import {MusicMainMenu} from "/Joshua-J-G.github.io/JS/MusicMenuScript";
+import {MainmenuSoftware} from "/Joshua-J-G.github.io/blob/main/JS/SoftwareMenuScript.js";
+import {MainmenuHardware} from "/Joshua-J-G.github.io/blob/main/JS/HardwareMenuScript.js";
+import {MusicMainMenu} from "/Joshua-J-G.github.io/blob/main/JS/MusicMenuScript.js";
 
 //Lines System
 // 
@@ -763,13 +763,13 @@ document.addEventListener('keydown', function(event) {
 
 
 var Software = new Image();
-Software.src = "../src/Icons/Software.png";
+Software.src = "/Joshua-J-G.github.io/blob/main/src/Icons/Software.png";
 
 var Hardware = new Image();
-Hardware.src = "../src/Icons/Hardware.png";
+Hardware.src = "/Joshua-J-G.github.io/blob/main/src/Icons/Hardware.png";
 
 var Music = new Image();
-Music.src = "../src/Icons/Music.png";
+Music.src = "/Joshua-J-G.github.io/blob/main/src/Icons/Music.png";
 
 var iconsize = 80;
 
