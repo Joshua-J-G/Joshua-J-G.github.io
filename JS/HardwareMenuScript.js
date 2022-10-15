@@ -3,30 +3,30 @@
 var sizeX = 900;
 var sizey = 700;
 
-import {LoadMenu} from "/Joshua-J-G.github.io/blob/main/JS/Intro.js";
+import {LoadMenu} from "./Joshua-J-G.github.io/blob/main/JS/Intro.js";
 
 var enterkey = new Image();
-enterkey.src = "/Joshua-J-G.github.io/blob/main/src/Images/Enter.png";
+enterkey.src = "./Joshua-J-G.github.io/blob/main/src/Images/Enter.png";
 
 var ArrowKeys = new Image();
-ArrowKeys.src = "/Joshua-J-G.github.io/blob/main/src/Images/ArrowKeys.png";
+ArrowKeys.src = "./Joshua-J-G.github.io/blob/main/src/Images/ArrowKeys.png";
 
 //Software Images
 var Central2D = new Image();
-Central2D.src = "/Joshua-J-G.github.io/blob/main/src/Images/Hardware/Hardware 1.png";
+Central2D.src = "./Joshua-J-G.github.io/blob/main/src/Images/Hardware/Hardware 1.png";
 
 var FightBot = new Image();
-FightBot.src = "/Joshua-J-G.github.io/blob/main/src/Images/Hardware/Hardware 2.png";
+FightBot.src = "./Joshua-J-G.github.io/blob/main/src/Images/Hardware/Hardware 2.png";
 
 var uniWeb = new Image();
-uniWeb.src = "/Joshua-J-G.github.io/blob/main/src/Images/Hardware/Hardware 3.png";
+uniWeb.src = "./Joshua-J-G.github.io/blob/main/src/Images/Hardware/Hardware 3.png";
 
 var StudyHub = new Image();
-StudyHub.src = "/Joshua-J-G.github.io/blob/main/src/Images/Hardware/Hardware 4.png";
+StudyHub.src = "./Joshua-J-G.github.io/blob/main/src/Images/Hardware/Hardware 4.png";
 
 
 var ImpostUs = new Image();
-ImpostUs.src = "/Joshua-J-G.github.io/blob/main/src/Images/Hardware/Hardware 5.png";
+ImpostUs.src = "./Joshua-J-G.github.io/blob/main/src/Images/Hardware/Hardware 5.png";
 
 
 
