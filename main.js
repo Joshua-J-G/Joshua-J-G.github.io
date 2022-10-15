@@ -1,4 +1,24 @@
-import "./style.css"
+
+
+
+var head = document.getElementsByTagName('HEAD')[0];
+ 
+// Create new link Element
+var link = document.createElement('link');
+
+// set the attributes for link element
+link.rel = 'stylesheet';
+
+link.type = 'text/css';
+
+link.href = './style.css';
+
+// Append link element to HTML head
+head.appendChild(link);
+
+
+
+
 //fix
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.117.1/build/three.module.js';
 import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.145.0/examples/jsm/loaders/GLTFLoader.js';
