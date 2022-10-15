@@ -85,7 +85,9 @@ function LoadGLTF(Location, id)
     console.log(Objects);
     scene.add( Objects );
   
-  }, undefined, function ( error ) {
+  },  (xhr) => {
+    console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+}, function ( error ) {
   
     console.error( error );
   
