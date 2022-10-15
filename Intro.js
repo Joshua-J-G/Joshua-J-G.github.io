@@ -7,7 +7,8 @@ const w95faregular = new FontFace('w95faregular', 'url(./src/Fonts/w95fa-webfont
 import {MainmenuSoftware} from "./SoftwareMenuScript.js";
 import {MainmenuHardware} from "./HardwareMenuScript.js";
 import {MusicMainMenu} from "./MusicMenuScript.js";
-
+var enterkey = new Image();
+enterkey.src = "./src/Images/Enter.png";
 //Lines System
 // 
 //
@@ -107,6 +108,7 @@ function sleep(ms) {
 
 var InMainMenu = false;
 
+var PopupControlls = true;
 
 export async function LoadMenu()
 {
@@ -136,11 +138,41 @@ export async function LoadMenu()
   ctx.textAlign = "left";
   ctx.fillText('Portfolio Options - Joshua Gessner', 600, 292);
 
+  
+
   InMainMenu = true;
+  if(PopupControlls)
+  {
+
+  
+    popup();
+  }
+  
 }
 
 
-
+function popup()
+{
+  ctx.fillStyle =  "black";
+  ctx.fillRect(canvas.width/2 - 250,canvas.height/2-50,500+5,200+5);
+  ctx.fillStyle =  "#c3c3c3";
+  ctx.fillRect(canvas.width/2 - 250,canvas.height/2-50,500,200);
+  ctx.strokeStyle = "#818181";
+  ctx.lineWidth = 4;
+  ctx.strokeRect(canvas.width/2 - 250,canvas.height/2-50,500,200);
+  ctx.drawImage(Arrows,((canvas.width/2))-(420/8)-185,(canvas.height/2)-40,420/4,240/4);
+  ctx.drawImage(enterkey,((canvas.width/2))-(420/8)-195,(canvas.height/2)+40,570/4,210/4);
+  ctx.font = '20px w95faregular';
+  ctx.textAlign = "left";
+  ctx.fillStyle = "black";
+  ctx.fillText('Use Arrows keys To select Object', (canvas.width/2)-(420/8)-75, (canvas.height/2)-5);
+  ctx.fillText('Use Enter Key to Confirm Selection', (canvas.width/2)-(420/8)-60, (canvas.height/2)+70);
+  ctx.fillStyle = "#0000a8";
+  ctx.fillRect(((canvas.width/2)-48), (canvas.height/2)+120-20, 100, 26);
+  ctx.fillStyle = "white";
+  ctx.textAlign = "center";
+  ctx.fillText('OK', ((canvas.width/2)), (canvas.height/2)+120); 
+}
 
 
 
@@ -150,7 +182,7 @@ export async function LoadMenu()
 
 async function statAnimation()
 {
-  
+ /* 
     console.log('w95faregular loaded');
     console.log(canvas);
     ctx.font = '20px w95faregular';
@@ -709,7 +741,7 @@ var sizeofpixels = 60;
   }
 
   
-  
+  */
 
 LoadMenu();
 }
@@ -738,7 +770,9 @@ document.addEventListener('keydown', function(event) {
   }
   else if(event.keyCode == 13)
   {
-    switch(selectedicon)
+    if(!PopupControlls)
+    {
+    switch(selectedicon )
     {
       case 0:
         SoftwareMenu();
@@ -750,6 +784,12 @@ document.addEventListener('keydown', function(event) {
         MusicMenu();
       break;
     }
+  }else
+  {
+    ctx.fillStyle =  "#c3c3c3";
+    ctx.fillRect(canvas.width/2 - 275,canvas.height/2-75,550,250);
+    PopupControlls = false;
+  }
   }
 }
 });
@@ -814,8 +854,8 @@ function MusicMenu()
 
 
 
-
-
+var Arrows = new Image();
+Arrows.src = "./src/Images/ArrowKeysLeft.png";
 
 
 
@@ -828,11 +868,17 @@ function MusicMenu()
 export function Update()
 {
   //resetScreen();
-  if(InMainMenu)
+  if(InMainMenu && !PopupControlls)
   {
+    
+
+
     ctx.drawImage(Hardware, (canvas.width/2)-iconsize/2, (canvas.height/2), iconsize, iconsize);
     ctx.drawImage(Music, ((canvas.width/2)+250)-(iconsize/2), (canvas.height/2), iconsize, iconsize);
     ctx.drawImage(Software, ((canvas.width/2)-250)-(iconsize/2), (canvas.height/2), iconsize, iconsize);
+
+  
+
 
     console.log(selectedicon);
     ctx.textAlign = "center";
@@ -896,7 +942,7 @@ export function Update()
     
         ctx.fillText('Software', ((canvas.width/2)-250), (canvas.height/2)+120);
     
-     
+       
 
       break;
 
