@@ -1,7 +1,7 @@
 import './style.css'
 //fix
-import * as THREE from './node_modules/three/src/Three';
-import { GLTFLoader } from './node_modules/three-gltf-loader/index';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 
 var Objects;
