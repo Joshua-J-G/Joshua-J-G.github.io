@@ -76,7 +76,7 @@ const Canvas = new THREE.Texture(ctx.canvas);
 function LoadGLTF()
 {
   const loader = new GLTFLoader();
-  loader.load( "./src/Models/CRT/port.glb", function ( gltf ) {
+  /*loader.load( "./src/Models/CRT/port.glb", function ( gltf ) {
     Objects = gltf.scene; 
     Objects.rotation.y = -Math.PI / 2;
     const material = new THREE.MeshStandardMaterial( {map: Canvas, emissive: Canvas, emissiveIntensity: 0.6,
@@ -92,7 +92,7 @@ function LoadGLTF()
     console.error( error );
   
   } );
-
+*/
 }
 
 
