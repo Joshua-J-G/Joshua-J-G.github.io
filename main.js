@@ -24,7 +24,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth,window.innerHeight);
 camera1.position.setZ(3.6);
 
-LoadGLTF('./src/Models/CRT/port.glb',0);
+LoadGLTF('/src/Models/CRT/port.glb',0);
 
 
 const pointlight = new THREE.PointLight(0xffffff);
