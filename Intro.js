@@ -150,7 +150,7 @@ export async function LoadMenu()
 
 async function statAnimation()
 {
-  /*
+  
     console.log('w95faregular loaded');
     console.log(canvas);
     ctx.font = '20px w95faregular';
@@ -708,7 +708,7 @@ var sizeofpixels = 60;
     await sleep(time);
   }
 
-  */
+  
   
 
 LoadMenu();
