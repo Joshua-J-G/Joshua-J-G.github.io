@@ -1,5 +1,5 @@
 import './Joshua-J-G.github.io/blob/main/style.css'
-
+//fix
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { AmbientLight, CanvasTexture, MeshStandardMaterial } from 'three';
