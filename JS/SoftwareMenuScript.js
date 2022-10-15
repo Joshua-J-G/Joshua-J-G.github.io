@@ -3,42 +3,42 @@
 var sizeX = 900;
 var sizey = 700;
 
-import {LoadMenu} from "./Joshua-J-G.github.io/blob/main/JS/Intro.js";
+import {LoadMenu} from "/JS/Intro.js";
 
 var enterkey = new Image();
-enterkey.src = "./Joshua-J-G.github.io/blob/main/src/Images/Enter.png";
+enterkey.src = "/src/Images/Enter.png";
 
 var ArrowKeys = new Image();
-ArrowKeys.src = "./Joshua-J-G.github.io/blob/main/src/Images/ArrowKeys.png";
+ArrowKeys.src = "/src/Images/ArrowKeys.png";
 
 //Software Images
 var Central2D = new Image();
-Central2D.src = "./Joshua-J-G.github.io/blob/main/src/Images/Software/Software1 Central 2D.png";
+Central2D.src = "/src/Images/Software/Software1 Central 2D.png";
 
 var FightBot = new Image();
-FightBot.src = "./Joshua-J-G.github.io/blob/main/src/Images/Software/Software2 FightBot.png";
+FightBot.src = "/src/Images/Software/Software2 FightBot.png";
 
 var uniWeb = new Image();
-uniWeb.src = "./Joshua-J-G.github.io/blob/main/src/Images/Software/Software3 UniWeb.png";
+uniWeb.src = "/src/Images/Software/Software3 UniWeb.png";
 
 var StudyHub = new Image();
-StudyHub.src = "./Joshua-J-G.github.io/blob/main/src/Images/Software/Software4 StudyHub.png";
+StudyHub.src = "/src/Images/Software/Software4 StudyHub.png";
 
 
 var ImpostUs = new Image();
-ImpostUs.src = "./Joshua-J-G.github.io/blob/main/src/Images/Software/Software5 FirstOnlineMultiplayer.png";
+ImpostUs.src = "/src/Images/Software/Software5 FirstOnlineMultiplayer.png";
 
 var Koth = new Image();
-Koth.src = "./Joshua-J-G.github.io/blob/main/src/Images/Software/Software6 KOTH.png";
+Koth.src = "./src/Images/Software/Software6 KOTH.png";
 
 var FireStar = new Image();
-FireStar.src = "./Joshua-J-G.github.io/blob/main/src/Images/Software/Software7 FireStar.png";
+FireStar.src = "/src/Images/Software/Software7 FireStar.png";
 
 var DoomLauncher = new Image();
-DoomLauncher.src = "./Joshua-J-G.github.io/blob/main/src/Images/Software/Software8 DoomLauncher.png";
+DoomLauncher.src = "/src/Images/Software/Software8 DoomLauncher.png";
 
 var GameReel = new Image();
-GameReel.src = "./Joshua-J-G.github.io/blob/main/src/Images/Software/Software9 GameReel.png";
+GameReel.src = "/src/Images/Software/Software9 GameReel.png";
 
 var canvas;
 

@@ -1,4 +1,4 @@
-import './Joshua-J-G.github.io/blob/main/style.css'
+import '/style.css'
 //fix
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -24,7 +24,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth,window.innerHeight);
 camera1.position.setZ(3.6);
 
-LoadGLTF('./Joshua-J-G.github.io/blob/main/src/Models/CRT/port.glb',0);
+LoadGLTF('/src/Models/CRT/port.glb',0);
 
 
 const pointlight = new THREE.PointLight(0xffffff);
