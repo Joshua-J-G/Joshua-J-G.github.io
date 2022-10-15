@@ -30,8 +30,8 @@ LoadGLTF();
 const pointlight = new THREE.PointLight(0xffffff);
 pointlight.position.set(0,0,1);
 pointlight.intensity = 0.1;
-
-scene.add(pointlight);
+const ambeientlight = new THREE.AmbientLight( 0x404040 );
+scene.add(pointlight,ambeientlight);
 
 
 //Canvas
