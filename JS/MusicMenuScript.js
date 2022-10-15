@@ -1,10 +1,10 @@
-import {LoadMenu} from "/JS/Intro.js";
+import {LoadMenu} from "./JS/Intro.js";
 //fix
 var enterkey = new Image();
-enterkey.src = "/src/Images/Enter.png";
+enterkey.src = "./src/Images/Enter.png";
 
 var ArrowKeys = new Image();
-ArrowKeys.src = "/src/Images/Full Arrows.png";
+ArrowKeys.src = "./src/Images/Full Arrows.png";
 
 var sizeX = 900;
 var sizey = 700;

@@ -4,9 +4,9 @@ import '/style.css'
 
 const w95faregular = new FontFace('w95faregular', 'url(./src/Fonts/w95fa-webfont.woff)');
 
-import {MainmenuSoftware} from "/JS/SoftwareMenuScript.js";
-import {MainmenuHardware} from "/JS/HardwareMenuScript.js";
-import {MusicMainMenu} from "/JS/MusicMenuScript.js";
+import {MainmenuSoftware} from "./JS/SoftwareMenuScript.js";
+import {MainmenuHardware} from "./JS/HardwareMenuScript.js";
+import {MusicMainMenu} from "./JS/MusicMenuScript.js";
 
 //Lines System
 // 
@@ -763,13 +763,13 @@ document.addEventListener('keydown', function(event) {
 
 
 var Software = new Image();
-Software.src = "/src/Icons/Software.png";
+Software.src = "./src/Icons/Software.png";
 
 var Hardware = new Image();
-Hardware.src = "/src/Icons/Hardware.png";
+Hardware.src = "./src/Icons/Hardware.png";
 
 var Music = new Image();
-Music.src = "/src/Icons/Music.png";
+Music.src = "./src/Icons/Music.png";
 
 var iconsize = 80;
 
