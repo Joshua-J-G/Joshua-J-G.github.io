@@ -1,12 +1,12 @@
-import '../style.css'
+import '/Joshua-J-G.github.io/style.css'
 
 
 
 const w95faregular = new FontFace('w95faregular', 'url(src/Fonts/w95fa-webfont.woff)');
 
-import {MainmenuSoftware} from "./SoftwareMenuScript";
-import {MainmenuHardware} from "./HardwareMenuScript";
-import {MusicMainMenu} from "./MusicMenuScript";
+import {MainmenuSoftware} from "/Joshua-J-G.github.io/JS/SoftwareMenuScript";
+import {MainmenuHardware} from "/Joshua-J-G.github.io/JS/HardwareMenuScript";
+import {MusicMainMenu} from "/Joshua-J-G.github.io/JS/MusicMenuScript";
 
 //Lines System
 // 

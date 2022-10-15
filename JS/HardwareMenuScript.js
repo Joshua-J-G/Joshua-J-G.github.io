@@ -3,39 +3,39 @@
 var sizeX = 900;
 var sizey = 700;
 
-import {LoadMenu} from "./Intro";
+import {LoadMenu} from "/Joshua-J-G.github.io/JS/Intro";
 
 var enterkey = new Image();
-enterkey.src = "../src/Images/Enter.png";
+enterkey.src = "/Joshua-J-G.github.io/src/Images/Enter.png";
 
 var ArrowKeys = new Image();
-ArrowKeys.src = "../src/Images/ArrowKeys.png";
+ArrowKeys.src = "/Joshua-J-G.github.io/src/Images/ArrowKeys.png";
 
 //Software Images
 var Central2D = new Image();
-Central2D.src = "../src/Images/Hardware/Hardware 1.png";
+Central2D.src = "/Joshua-J-G.github.io/src/Images/Hardware/Hardware 1.png";
 
 var FightBot = new Image();
-FightBot.src = "../src/Images/Hardware/Hardware 2.png";
+FightBot.src = "/Joshua-J-G.github.io/src/Images/Hardware/Hardware 2.png";
 
 var uniWeb = new Image();
-uniWeb.src = "../src/Images/Hardware/Hardware 3.png";
+uniWeb.src = "/Joshua-J-G.github.io/src/Images/Hardware/Hardware 3.png";
 
 var StudyHub = new Image();
-StudyHub.src = "../src/Images/Hardware/Hardware 4.png";
+StudyHub.src = "/Joshua-J-G.github.io/src/Images/Hardware/Hardware 4.png";
 
 
 var ImpostUs = new Image();
-ImpostUs.src = "../src/Images/Hardware/Hardware 5.png";
+ImpostUs.src = "/Joshua-J-G.github.io/src/Images/Hardware/Hardware 5.png";
 
 var Koth = new Image();
-Koth.src = "../src/Images/Software/Software6 KOTH.png";
+Koth.src = "/Joshua-J-G.github.io/src/Images/Software/Software6 KOTH.png";
 
 var FireStar = new Image();
-FireStar.src = "../src/Images/Software/Software7 FireStar.png";
+FireStar.src = "/Joshua-J-G.github.io/src/Images/Software/Software7 FireStar.png";
 
 var DoomLauncher = new Image();
-DoomLauncher.src = "../src/Images/Software/Software8 DoomLauncher.png";
+DoomLauncher.src = "/Joshua-J-G.github.io/src/Images/Software/Software8 DoomLauncher.png";
 
 var canvas;
 
