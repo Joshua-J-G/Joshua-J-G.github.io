@@ -3,7 +3,9 @@ top: 0;
 left: 0;}
 
 #Screen{
-  
+  position: fixed;
+  top: 0;
+  left: 0;
   display: block;
   margin-left: auto;
   margin-right: auto;

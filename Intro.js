@@ -22,7 +22,7 @@ import {MusicMainMenu} from "./MusicMenuScript.js";
 
 
 
-ctx.canvas.hidden  = true;
+
 w95faregular.load().then(function(mfont){
 
 
