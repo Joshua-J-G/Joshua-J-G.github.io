@@ -3,7 +3,7 @@
 var sizeX = 900;
 var sizey = 700;
 
-import {LoadMenu} from "./Joshua-J-G.github.io/blob/main/JS/Intro.mjs";
+import {LoadMenu} from "./Joshua-J-G.github.io/blob/main/JS/Intro.js";
 
 var enterkey = new Image();
 enterkey.src = "./Joshua-J-G.github.io/blob/main/src/Images/Enter.png";
