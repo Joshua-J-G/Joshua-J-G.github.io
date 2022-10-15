@@ -1,0 +1,18 @@
+#bg { position: fixed;
+top: 0;
+left: 0;}
+
+#Screen{
+  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html, body {
+  width: 1920px;
+  height: 1080px;
+ }
+
+
+
