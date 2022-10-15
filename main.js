@@ -24,7 +24,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth,window.innerHeight);
 camera1.position.setZ(3.6);
 
-LoadGLTF('./src/Models/CRT/port.glb',0);
+LoadGLTF();
 
 
 const pointlight = new THREE.PointLight(0xffffff);
@@ -73,10 +73,10 @@ const Canvas = new THREE.Texture(ctx.canvas);
 
 
 
-function LoadGLTF(Location, id)
+function LoadGLTF()
 {
   const loader = new GLTFLoader();
-  loader.load( Location, function ( gltf ) {
+  loader.load( "./src/Models/CRT/port.glb", function ( gltf ) {
     Objects = gltf.scene; 
     Objects.rotation.y = -Math.PI / 2;
     const material = new THREE.MeshStandardMaterial( {map: Canvas, emissive: Canvas, emissiveIntensity: 0.6,
