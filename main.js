@@ -31,6 +31,7 @@ const pointlight = new THREE.PointLight(0xffffff);
 pointlight.position.set(0,0,1);
 pointlight.intensity = 0.1;
 const ambeientlight = new THREE.AmbientLight( 0xffffff );
+ambeientlight.setZ(0,0,1);
 scene.add(pointlight,ambeientlight);
 
 
