@@ -125,7 +125,7 @@ export async function LoadMenu()
 
 
 
-    await sleep(100);
+    await sleep(50);
   }
   ctx.fillStyle =  "#0000a8";
   ctx.fillRect(canvas.width / 2-390 , (canvas.height/2 - 14*20) + 10, 780, 30);
@@ -375,10 +375,10 @@ async function statAnimation()
   
   ctx.strokeText('Welcome', (canvas.width/2), (canvas.height/2)+50);
 
-  await sleep(1000);
+  await sleep(500);
 
   
-var time = 0.5;
+var time = 0.1;
 var sizeofpixels = 60;
 
 
