@@ -174,9 +174,27 @@ function popup()
   ctx.fillText('OK', ((canvas.width/2)), (canvas.height/2)+120); 
 }
 
+var time = 0.1;
+var sizeofpixels = 60;
 
+async function looptheScreen(times)
+{
+  for (let x = 0; x < canvas.width; x += sizeofpixels) {
+    ctx.fillStyle = "#01817f";
+    ctx.fillRect(x, sizeofpixels*times, sizeofpixels, sizeofpixels);
+    ctx.fillRect(sizeofpixels*times, x, sizeofpixels, sizeofpixels);
+   
+    ctx.fillRect(canvas.width - x,sizeofpixels*(17-times), sizeofpixels, sizeofpixels);
+    ctx.fillRect(sizeofpixels * (31-times),canvas.height - x, sizeofpixels, sizeofpixels);
+    await sleep(time);
+  }
 
+  if(times == 8)
+  {
+    LoadMenu();
+  }
 
+}
 
 
 
@@ -330,15 +348,15 @@ async function statAnimation()
   resetScreen();
 
   await sleep(1000);
-  for (let x = 0; x < 300; x += 30) {
+  for (let x = 0; x < 240; x += 30) {
     ctx.fillStyle = "#c3c3c3";
-    ctx.fillRect(x+ (canvas.width / 2)- 30*9 , canvas.height/2, 30, 30);
-    ctx.fillRect(-x+ (canvas.width / 2) + 30*9 , canvas.height/2, 30, 30);
+    ctx.fillRect(x+ (canvas.width / 2)- 30*8 , canvas.height/2, 30, 30);
+    ctx.fillRect(-x+ (canvas.width / 2) + 30*8 , canvas.height/2, 30, 30);
 
     await sleep(100);
   }
 
-  for (let x = 0; x < 20*4; x += 20) {
+  for (let x = 0; x < 80; x += 30) {
     ctx.fillStyle =  "#c3c3c3";
     ctx.fillRect(canvas.width / 2-300 , canvas.height/2 + x, 600, 30);
     ctx.fillRect(canvas.width / 2 -300, canvas.height/2 - x, 600, 30);
@@ -375,375 +393,24 @@ async function statAnimation()
   
   ctx.strokeText('Welcome', (canvas.width/2), (canvas.height/2)+50);
 
-  await sleep(500);
+  await sleep(1000);
 
   
-var time = 0.1;
-var sizeofpixels = 60;
 
 
-  for (let x = 0; x < canvas.width; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(x, 0, sizeofpixels, sizeofpixels);
 
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(canvas.width - sizeofpixels, x, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.width; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect( (canvas.width)-x, canvas.height - sizeofpixels, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*2+sizeofpixels; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(0, canvas.height - x, sizeofpixels*2, sizeofpixels);
-
-    await sleep(time);
-  }
-  
-
-  for (let x = 0; x < canvas.width-sizeofpixels*2; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(x, sizeofpixels, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*2; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(canvas.width - sizeofpixels*2, x, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.width-sizeofpixels; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect( (canvas.width)-x, canvas.height - sizeofpixels*2, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels+sizeofpixels; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(sizeofpixels, (canvas.height - x)+sizeofpixels, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
+looptheScreen(0);
+looptheScreen(1);
+looptheScreen(2);
+looptheScreen(3);
+looptheScreen(4);
+looptheScreen(5);
+looptheScreen(6);
+looptheScreen(7);
+looptheScreen(8);
 
   
-  for (let x = 0; x < canvas.width-sizeofpixels*3; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(x, sizeofpixels*2, sizeofpixels, sizeofpixels);
 
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*3; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(canvas.width - sizeofpixels*3, x, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.width-sizeofpixels*2; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect( (canvas.width)-x, canvas.height - sizeofpixels*3, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*2; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(sizeofpixels*2, (canvas.height - x)+sizeofpixels, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-
-  
-  for (let x = 0; x < canvas.width-sizeofpixels*4; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(x, sizeofpixels*3, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*4; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(canvas.width - sizeofpixels*4, x, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.width-sizeofpixels*3; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect( (canvas.width)-x, canvas.height - sizeofpixels*4, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*3; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(sizeofpixels*3, (canvas.height - x)+sizeofpixels, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-
-  
-  for (let x = 0; x < canvas.width-sizeofpixels*5; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(x, sizeofpixels*4, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*5; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(canvas.width - sizeofpixels*5, x, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.width-sizeofpixels*4; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect( (canvas.width)-x, canvas.height - sizeofpixels*5, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*4; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(sizeofpixels*4, (canvas.height - x)+sizeofpixels, sizeofpixels, sizeofpixels);
-    await sleep(time);
-  }
-
-  for (let x = 0; x < canvas.width-sizeofpixels*6; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(x, sizeofpixels*5, sizeofpixels, sizeofpixels);
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*6; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(canvas.width - sizeofpixels*6, x, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.width-sizeofpixels*5; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect( (canvas.width)-x, canvas.height - sizeofpixels*6, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*5; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(sizeofpixels*5, (canvas.height - x)+sizeofpixels, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-
-
-  for (let x = 0; x < canvas.width-sizeofpixels*7; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(x, sizeofpixels*6, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*7; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(canvas.width - sizeofpixels*7, x, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.width-sizeofpixels*6; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect( (canvas.width)-x, canvas.height - sizeofpixels*7, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*6; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(sizeofpixels*6, (canvas.height - x)+sizeofpixels, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-
-  for (let x = 0; x < canvas.width-sizeofpixels*8; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(x, sizeofpixels*7, sizeofpixels, sizeofpixels);
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*8; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(canvas.width - sizeofpixels*8, x, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.width-sizeofpixels*7; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect( (canvas.width)-x, canvas.height - sizeofpixels*8, sizeofpixels, sizeofpixels);
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*7; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(sizeofpixels*7, (canvas.height - x)+sizeofpixels, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-
-  for (let x = 0; x < canvas.width-sizeofpixels*9; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(x, sizeofpixels*8, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*9; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(canvas.width - sizeofpixels*9, x, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.width-sizeofpixels*8; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect( (canvas.width)-x, canvas.height - sizeofpixels*9, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*8; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(sizeofpixels*8, (canvas.height - x)+sizeofpixels, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-
-  
-  for (let x = 0; x < canvas.width-sizeofpixels*10; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(x, sizeofpixels*9, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*10; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(canvas.width - sizeofpixels*10, x, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.width-sizeofpixels*9; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect( (canvas.width)-x, canvas.height - sizeofpixels*10, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*9; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(sizeofpixels*9, (canvas.height - x)+sizeofpixels, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-
-
-
-  for (let x = 0; x < canvas.width-sizeofpixels*11; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(x, sizeofpixels*10, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*11; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(canvas.width - sizeofpixels*11, x, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.width-sizeofpixels*10; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect( (canvas.width)-x, canvas.height - sizeofpixels*11, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*10; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(sizeofpixels*10, (canvas.height - x)+sizeofpixels, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-
-  
-  for (let x = 0; x < canvas.width-sizeofpixels*12; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(x, sizeofpixels*11, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*12; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(canvas.width - sizeofpixels*12, x, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.width-sizeofpixels*11; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect( (canvas.width)-x, canvas.height - sizeofpixels*12, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*11; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(sizeofpixels*11, (canvas.height - x)+sizeofpixels, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  
-
-
-  for (let x = 0; x < canvas.width-sizeofpixels*13; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(x, sizeofpixels*12, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*13; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(canvas.width - sizeofpixels*13, x, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.width-sizeofpixels*12; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect( (canvas.width)-x, canvas.height - sizeofpixels*13, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*12; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(sizeofpixels*12, (canvas.height - x)+sizeofpixels, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-
-
-  for (let x = 0; x < canvas.width-sizeofpixels*14; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(x, sizeofpixels*13, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*14; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(canvas.width - sizeofpixels*14, x, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.width-sizeofpixels*13; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect( (canvas.width)-x, canvas.height - sizeofpixels*14, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-  for (let x = 0; x < canvas.height-sizeofpixels*13; x += sizeofpixels) {
-    ctx.fillStyle = "#01817f";
-    ctx.fillRect(sizeofpixels*13, (canvas.height - x)+sizeofpixels, sizeofpixels, sizeofpixels);
-
-    await sleep(time);
-  }
-
-  
-  
-
-LoadMenu();
 }
 var selectedicon = 0;
 
