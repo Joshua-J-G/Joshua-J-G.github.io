@@ -122,7 +122,7 @@ export function UpdateHardware()
             ctxe.fillStyle = "black";
             ctxe.font = '50px w95faregular';
             ctxe.fillText('Introduction', canvas.width /2 - (sizeX/2) + (10 + sizeX - 20 - 175)/2, 300);
-            ctxe.drawImage(enterkey, (canvas.width/2)-210*2, (canvas.height/2)+150, 570/2, 210/2);
+          
             ctxe.drawImage(ArrowKeys, (canvas.width/2)-192*2, (canvas.height/2)-150, 191/2, 461/2);
         
         
@@ -130,7 +130,7 @@ export function UpdateHardware()
             ctxe.textAlign = "left";
             ctxe.font = '20px w95faregular';
             ctxe.fillText('Use the Up and Down Arrow Keys To Navigate Between Projects', (canvas.width /2 - (sizeX/2) + (10 + sizeX - 20 - 175)/2 ) - 175, (canvas.height/2)-150 + 461/4);
-            ctxe.fillText('Hitting Enter will Direct you to a demonstration or Project files', (canvas.width /2 - (sizeX/2) + (10 + sizeX - 20 - 175)/2 ) - 175, (canvas.height/2)-150 + 425);
+        
         break;
         case 1:
             refreshWhiteSpace();

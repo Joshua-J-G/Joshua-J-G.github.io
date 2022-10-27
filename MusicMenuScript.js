@@ -10,6 +10,11 @@ var sizeX = 900;
 var sizey = 700;
 
 
+var Bioshockaudio = new Audio("./src/Audio/Bioshock.mp3");
+var Cupheadaudio = new Audio("./src/Audio/Cuphead.mp3");
+
+
+var Art = new Audio("./src/Audio/ArtistRageOST.mp3");
 
 var canvas;
 
@@ -29,7 +34,7 @@ function TakeToWebSight()
     {
 
 
-        case 5:
+        case 4:
             ifonsoftwaremenu = false;
             LoadMenu();
         break;
@@ -39,13 +44,71 @@ function TakeToWebSight()
     switch(selectedObject)
     {
         case 0:
-
+            switch(selectedProject)
+            {
+                case 1:
+                    Cupheadaudio.currentTime = 0;
+                    Cupheadaudio.play();
+                break;
+                case 2:
+                    Bioshockaudio.currentTime = 0;
+                    Bioshockaudio.play();
+                break;
+                case 3:
+                    Art.currentTime = 0;
+                    Art.play();
+                break;
+            }
         break;
         case 1:
             playvideo = !playvideo;
+
+            switch(selectedProject)
+            {
+                case 1:
+                    if(playvideo)
+                    {
+                        Cupheadaudio.play();
+                    }else
+                    {
+                        Cupheadaudio.pause();
+                    }
+                break;
+                case 2:
+                    if(playvideo)
+                    {
+                        Bioshockaudio.play();
+                    }else
+                    {
+                        Bioshockaudio.pause();
+                    }
+                break;
+                case 3:
+                    if(playvideo)
+                    {
+                        Art.play();
+                    }else
+                    {
+                        Art.pause();
+                    }
+                break;
+            }
         break;
         case 2:
-
+            
+            switch(selectedProject)
+            {
+                case 1:
+                    window.open("https://drive.google.com/file/d/1JwVhMqfKWjwx_ihu32cW1lmvUQfNrIC2/view?usp=sharing");
+                break;
+                case 2:
+                    window.open("https://drive.google.com/file/d/1svQe8zlVlPlaSX32-P1YZuGDbs9YVSQe/view?usp=sharing");
+                break;
+                case 3:
+                    window.open("https://drive.google.com/file/d/1PQCcWXT_zr5vqWE7U64RlGCDD3JCrWJC/view?usp=sharing");
+                break;
+            }
+           
         break;
     }
 }
@@ -64,18 +127,28 @@ document.addEventListener('keydown', function(event) {
     
     if(event.keyCode == 38) {
         selectedProject--;
+        Cupheadaudio.pause();
+        Bioshockaudio.pause();
+        Art.pause();
         if(selectedProject <= -1)
         {
             selectedProject = 0
         }
+        playvideo = false;
+        selectedObject = 0;
    
     }
     else if(event.keyCode == 40) {
         selectedProject++;
-        if(selectedProject >= 5)
+        Cupheadaudio.pause();
+        Bioshockaudio.pause();
+        Art.pause();
+        if(selectedProject >= 4)
         {
-            selectedProject = 5;
+            selectedProject = 4;
         }
+        playvideo = false;
+        selectedObject = 0;
     }
     else if(event.keyCode == 13)
     {
@@ -83,6 +156,7 @@ document.addEventListener('keydown', function(event) {
     }else if(event.keyCode == 37)
     {
         selectedObject--;
+ 
         if(selectedObject <= -1)
         {
             selectedObject = 0;
@@ -90,6 +164,7 @@ document.addEventListener('keydown', function(event) {
     }else if(event.keyCode == 39)
     {
         selectedObject++;
+      
         if(selectedObject >= 2)
         {
             selectedObject = 2;
@@ -124,14 +199,21 @@ document.addEventListener('keydown', function(event) {
     {
         ctxe.font = '100px w95faregular';
         ctxe.fillText('▶', canvas.width /2 - (sizeX/2) + (10 + sizeX - 20 - 175)/2, 815);
+    
     }else
     {
         ctxe.font = '60px w95faregular';
         ctxe.fillText('▌▌', canvas.width /2 - (sizeX/2) + (10 + sizeX - 20 - 175)/2, 800);
+      
+        
     }
-
+    ctxe.textAlign = "center";
+    
     ctxe.font = '100px w95faregular';
     ctxe.fillText('◀', canvas.width /2 - (sizeX/2) + (10 + sizeX - 20 - 175)/2 -150, 815);
+    ctxe.textAlign = "center";
+    ctxe.font = '100px w95faregular';
+    ctxe.fillText('▼', canvas.width /2 - (sizeX/2) + (10 + sizeX - 20 - 175)/2+ 150, 815);
 
 
     switch(selectedObject)
@@ -140,6 +222,7 @@ document.addEventListener('keydown', function(event) {
             ctxe.fillStyle =  "black";
             ctxe.fillStyle =  "#0000a8";
            ctxe.fillRect(canvas.width /2 - (sizeX/2) + (10 + sizeX - 20 - 175)/2 - 60 - 150, 825,100,20);
+
         break;
         case 1:
             ctxe.fillStyle =  "black";
@@ -147,6 +230,7 @@ document.addEventListener('keydown', function(event) {
            ctxe.fillRect(canvas.width /2 - (sizeX/2) + (10 + sizeX - 20 - 175)/2 - 60, 825,100,20);
         break;
         case 2:
+            
             ctxe.fillStyle =  "black";
             ctxe.fillStyle =  "#0000a8";
            ctxe.fillRect(canvas.width /2 - (sizeX/2) + (10 + sizeX - 20 - 175)/2 - 60 + 150, 825,100,20);
@@ -208,17 +292,9 @@ document.addEventListener('keydown', function(event) {
       ctxe.font = '20px w95faregular';
       ctxe.fillStyle = "black";
       ctxe.textAlign = "center";
-      ctxe.fillText('IDkhow', canvas.width /2 + sizeX/2 - 165 +155/2,220+50*3);
+      ctxe.fillText('Comp 1', canvas.width /2 + sizeX/2 - 165 +155/2,220+50*3);
   
   
-      ctxe.fillStyle =  "black";
-      ctxe.fillRect(canvas.width /2 + sizeX/2 - 165+1, 200+1+50*4,155,30);
-      ctxe.fillStyle =  "#c3c3c3";
-      ctxe.fillRect(canvas.width /2 + sizeX/2 - 165,200+50*4,155,30);
-      ctxe.font = '20px w95faregular';
-      ctxe.fillStyle = "black";
-      ctxe.textAlign = "center";
-      ctxe.fillText('Comp 1', canvas.width /2 + sizeX/2 - 165 +155/2,220+50*4);
   
      
   
@@ -249,6 +325,7 @@ document.addEventListener('keydown', function(event) {
           ctxe.fillStyle = "white";
           ctxe.textAlign = "center";
           ctxe.fillText('Cuphead', canvas.width /2 + sizeX/2 - 165 +155/2,220+50*1);
+  
           break;
           case 2:
               ctxe.fillStyle =  "#0000a8";
@@ -264,19 +341,11 @@ document.addEventListener('keydown', function(event) {
       ctxe.font = '20px w95faregular';
       ctxe.fillStyle = "white";
       ctxe.textAlign = "center";
-      ctxe.fillText('IDkhow', canvas.width /2 + sizeX/2 - 165 +155/2,220+50*3);
+      ctxe.fillText('Comp', canvas.width /2 + sizeX/2 - 165 +155/2,220+50*3);
           break;
+   
+
           case 4:
-              ctxe.fillStyle =  "#0000a8";
-      ctxe.fillRect(canvas.width /2 + sizeX/2 - 165,200+50*4,155,30);
-      ctxe.font = '20px w95faregular';
-      ctxe.fillStyle = "white";
-      ctxe.textAlign = "center";
-      ctxe.fillText('Comp 1', canvas.width /2 + sizeX/2 - 165 +155/2,220+50*4);
-          break;
-  
-  
-          case 5:
               ctxe.fillStyle =  "#ff0081";
       ctxe.fillRect(canvas.width /2 + sizeX/2 - 165,200+50*13,155,30);
       ctxe.font = '20px w95faregular';
@@ -326,6 +395,25 @@ document.addEventListener('keydown', function(event) {
               ctxe.fillText('Cuphead Medley', canvas.width /2 - (sizeX/2) + (10 + sizeX - 20 - 175)/2, 300);
               MediaButtons();
           break;
+          case 2:
+             
+            refreshWhiteSpace();
+            ctxe.fillStyle = "black";
+            ctxe.textAlign = "center";
+            ctxe.font = '60px w95faregular';
+            ctxe.fillText("Cohen's Masterpiece", canvas.width /2 - (sizeX/2) + (10 + sizeX - 20 - 175)/2, 300);
+            MediaButtons();
+        break;
+        case 3:
+             
+            refreshWhiteSpace();
+            ctxe.fillStyle = "black";
+            ctxe.textAlign = "center";
+            ctxe.font = '60px w95faregular';
+            ctxe.fillText('Comp 1', canvas.width /2 - (sizeX/2) + (10 + sizeX - 20 - 175)/2, 300);
+            MediaButtons();
+        break;
+     
       }
       
     
