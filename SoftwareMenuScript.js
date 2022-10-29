@@ -83,6 +83,21 @@ function TakeToWebSight()
             window.open("https://github.com/Joshua-J-G/FireStar-3D");
         break;
 
+        case 5:
+            window.open("https://drive.google.com/file/d/1FPdCdmKaHiX7u78h7SvyUUzSwc9tfZE3/view?usp=sharing");
+        break;
+
+        case 7:
+            window.open("https://youtu.be/jlaOUzfmvCo");
+        break;
+
+
+        case 8:
+            window.open("https://drive.google.com/file/d/1vPHxf1zUy9jiRXwqgYv0v67VtH34Da-g/view?usp=sharing");
+        break;
+        case 9:
+            window.open("https://youtu.be/FZsmH2ueAsw");
+        break;
 
         case 10:
             ifonsoftwaremenu = false;
