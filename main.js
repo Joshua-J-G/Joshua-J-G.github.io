@@ -6,7 +6,7 @@
 //fix
 //import * as THREE from 'https://threejs.org/build/three.js';
 
-import * as THREE from './three.js';
+import * as THREE from 'https://threejs.org/build/three.js';
 //import { GLTFLoader } from 'GLTFLoader';
 import { GLTFLoader } from './GLTFLoader.js';
 
