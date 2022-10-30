@@ -22,14 +22,14 @@ enterkey.src = "./src/Images/Enter.png";
 //
 
 
-if(!stopresize){
+
 window.resizeTo(
 
   
   window.screen.availWidth / 2,
   window.screen.availHeight / 2
 );
-}
+
 
 
 w95faregular.load().then(function(mfont){
@@ -87,6 +87,7 @@ w95faregular.load().then(function(mfont){
    
     resetScreen("black");
     statAnimation();
+    stopresize= true;
   });
 //250px is the top
 //800px is the bottom of the screen
@@ -150,7 +151,7 @@ export async function LoadMenu()
   
 
   InMainMenu = true;
-  stopresize= true;
+
   if(PopupControlls)
   {
 
@@ -539,7 +540,9 @@ var Envelop = new Image();
 Envelop.src = "./src/Icons/Email.png";
 
 window.addEventListener("resize", () => {
+  if(!stopresize){
   window.location.reload();
+  }
 });
 
 
