@@ -22,11 +22,14 @@ enterkey.src = "./src/Images/Enter.png";
 //
 
 
-
+if(!stopresize){
 window.resizeTo(
+
+  
   window.screen.availWidth / 2,
   window.screen.availHeight / 2
 );
+}
 
 
 w95faregular.load().then(function(mfont){
@@ -114,6 +117,7 @@ function sleep(ms) {
 var InMainMenu = false;
 
 var PopupControlls = true;
+var stopresize = false;
 
 export async function LoadMenu()
 {
@@ -146,6 +150,7 @@ export async function LoadMenu()
   
 
   InMainMenu = true;
+  stopresize= true;
   if(PopupControlls)
   {
 
