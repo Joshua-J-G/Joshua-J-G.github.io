@@ -8,7 +8,7 @@
 
 import * as THREE from './three.js';
 //import { GLTFLoader } from 'GLTFLoader';
-import { GLTFLoader } from './GLTFLoader';
+import { GLTFLoader } from './GLTFLoader.js';
 
 var Objects;
 
