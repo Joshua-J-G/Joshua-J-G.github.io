@@ -23,6 +23,11 @@ enterkey.src = "./src/Images/Enter.png";
 
 
 
+window.resizeTo(
+  window.screen.availWidth / 2,
+  window.screen.availHeight / 2
+);
+
 
 w95faregular.load().then(function(mfont){
 
@@ -413,7 +418,7 @@ looptheScreen(8);
 
 }
 var selectedicon = 0;
-
+var incontactsmenu = false;
 document.addEventListener('keydown', function(event) {
   if(InMainMenu)
   {
@@ -423,12 +428,12 @@ document.addEventListener('keydown', function(event) {
     selectedicon--;
     if(selectedicon <= -1)
     {
-      selectedicon = 2;
+      selectedicon = 3;
     }
   }
   else if(event.keyCode == 39) {
     selectedicon++;
-    if(selectedicon >= 3)
+    if(selectedicon >= 4)
     {
       selectedicon = 0;
     }
@@ -437,7 +442,10 @@ document.addEventListener('keydown', function(event) {
   }
   else if(event.keyCode == 13)
   {
-    if(!PopupControlls)
+    
+    console.log("Enter Called");
+
+    if(!PopupControlls )
     {
     switch(selectedicon )
     {
@@ -450,12 +458,19 @@ document.addEventListener('keydown', function(event) {
       case 2:
         MusicMenu();
       break;
+      case 3:
+        console.log("Enter Contact Called Called");
+     
+        Contact()
+        break;
     }
   }else
   {
     ctx.fillStyle =  "#c3c3c3";
     ctx.fillRect(canvas.width/2 - 275,canvas.height/2-75,550,250);
     PopupControlls = false;
+
+    console.log("reset Called");
   }
   }
 }
@@ -477,6 +492,9 @@ Hardware.src = "./src/Icons/Hardware.png";
 
 var Music = new Image();
 Music.src = "./src/Icons/Music.png";
+
+var Contacts = new Image();
+Contacts.src = "./src/Icons/Contacts.png";
 
 var iconsize = 80;
 
@@ -512,7 +530,49 @@ function MusicMenu()
 
 }
 
+var Envelop = new Image();
+Envelop.src = "./src/Icons/Email.png";
 
+window.addEventListener("resize", () => {
+  window.location.reload();
+});
+
+
+function popupforContact()
+{
+
+  console.log(PopupControlls);
+  ctx.fillStyle =  "black";
+  ctx.fillRect(canvas.width/2 - 250,canvas.height/2-50,500+5,200+5);
+  ctx.fillStyle =  "#c3c3c3";
+  ctx.fillRect(canvas.width/2 - 250,canvas.height/2-50,500,200);
+  ctx.strokeStyle = "#818181";
+  ctx.lineWidth = 4;
+  ctx.strokeRect(canvas.width/2 - 250,canvas.height/2-50,500,200);
+  ctx.drawImage(Envelop,((canvas.width/2))-(420/8)-185,(canvas.height/2)-40,32*3,32*3);
+ // ctx.drawImage(enterkey,((canvas.width/2))-(420/8)-195,(canvas.height/2)+40,570/4,210/4);
+  ctx.font = '30px w95faregular';
+  ctx.textAlign = "left";
+  ctx.fillStyle = "black";
+  ctx.fillText('Joshua.Gessner5@gmail.com', (canvas.width/2)-(420/8)-75, (canvas.height/2)+15);
+  //ctx.fillText('phone', (canvas.width/2)-(420/8)-60, (canvas.height/2)+70);
+  ctx.font = '20px w95faregular';
+  ctx.fillStyle = "#0000a8";
+  ctx.fillRect(((canvas.width/2)-48), (canvas.height/2)+120-20, 100, 26);
+  ctx.fillStyle = "white";
+  ctx.textAlign = "center";
+  ctx.fillText('OK', ((canvas.width/2)), (canvas.height/2)+120); 
+}
+
+
+function Contact()
+{
+  console.log("Contacts Coalled");
+  //InMainMenu = false;
+  PopupControlls = true;
+  popupforContact();
+
+}
 
 
 
@@ -540,10 +600,10 @@ export function Update()
     
 
 
-    ctx.drawImage(Hardware, (canvas.width/2)-iconsize/2, (canvas.height/2), iconsize, iconsize);
-    ctx.drawImage(Music, ((canvas.width/2)+250)-(iconsize/2), (canvas.height/2), iconsize, iconsize);
+    ctx.drawImage(Hardware, ((canvas.width/2)-100)-iconsize/2, (canvas.height/2), iconsize, iconsize);
+    ctx.drawImage(Music, ((canvas.width/2)+100)-(iconsize/2), (canvas.height/2), iconsize, iconsize);
     ctx.drawImage(Software, ((canvas.width/2)-250)-(iconsize/2), (canvas.height/2), iconsize, iconsize);
-
+    ctx.drawImage(Contacts, ((canvas.width/2)+250)-(iconsize/2), (canvas.height/2), iconsize, iconsize);
   
 
 
@@ -560,56 +620,88 @@ export function Update()
           ctx.fillText('Software', ((canvas.width/2)-250), (canvas.height/2)+120);      
 
           ctx.fillStyle = "#c3c3c3";
-          ctx.fillRect(((canvas.width/2)+250-48), (canvas.height/2)+120-20, 100, 26);
+          ctx.fillRect(((canvas.width/2)+100-48), (canvas.height/2)+120-20, 100, 26);
           ctx.fillStyle = "#c3c3c3";
-          ctx.fillRect(((canvas.width/2)-48), (canvas.height/2)+120-20, 100, 26);
-
+          ctx.fillRect(((canvas.width/2)-48 - 100), (canvas.height/2)+120-20, 100, 26);
+         
+          ctx.fillStyle = "#c3c3c3";
+          ctx.fillRect(((canvas.width/2)+250-48), (canvas.height/2)+120-20, 100, 26);
           ctx.fillStyle = "black";
           ctx.textAlign = "center";
           ctx.font = '24px w95faregular';
-          ctx.fillText('Hardware', (canvas.width/2), (canvas.height/2)+120);
+          ctx.fillText('Hardware', (canvas.width/2) - 100, (canvas.height/2)+120);
       
 
-          ctx.fillText('Music', ((canvas.width/2)+250), (canvas.height/2)+120);
+          ctx.fillText('Music', ((canvas.width/2)+100), (canvas.height/2)+120);
+
+          ctx.fillText('Contact', ((canvas.width/2)+250), (canvas.height/2)+120);
       
       break;
       case 1:
         ctx.fillStyle = "#0000a8";
-        ctx.fillRect(((canvas.width/2)-48), (canvas.height/2)+120-20, 100, 26);
+        ctx.fillRect(((canvas.width/2)-48 - 100), (canvas.height/2)+120-20, 100, 26);
         ctx.fillStyle = "white";
-        ctx.fillText('Hardware', ((canvas.width/2)), (canvas.height/2)+120); 
-
+        ctx.fillText('Hardware', ((canvas.width/2))-100, (canvas.height/2)+120); 
+        ctx.fillStyle = "#c3c3c3";
+        ctx.fillRect(((canvas.width/2)+250-48), (canvas.height/2)+120-20, 100, 26);
         ctx.fillStyle = "#c3c3c3";
         ctx.fillRect(((canvas.width/2)-250-48), (canvas.height/2)+120-20, 100, 26);
         ctx.fillStyle = "#c3c3c3";
-        ctx.fillRect(((canvas.width/2)+250-48), (canvas.height/2)+120-20, 100, 26);
-
+        ctx.fillRect(((canvas.width/2)+100-48), (canvas.height/2)+120-20, 100, 26);
+        ctx.fillStyle = "#c3c3c3";
+        ctx.fillRect(((canvas.width/2)-250-48), (canvas.height/2)+250-20, 100, 26);
         ctx.fillStyle = "black";
   
         
     
         ctx.fillText('Software', ((canvas.width/2)-250), (canvas.height/2)+120);
     
-        ctx.fillText('Music', ((canvas.width/2)+250), (canvas.height/2)+120);
+        ctx.fillText('Music', ((canvas.width/2)+100), (canvas.height/2)+120);
+        ctx.fillText('Contact', ((canvas.width/2)+250), (canvas.height/2)+120);
       break;
       case 2:
         ctx.fillStyle = "#0000a8";
-        ctx.fillRect(((canvas.width/2)+250-48), (canvas.height/2)+120-20, 100, 26);
+        ctx.fillRect(((canvas.width/2)+100-48), (canvas.height/2)+120-20, 100, 26);
         ctx.fillStyle = "white";
-        ctx.fillText('Music', ((canvas.width/2)+250), (canvas.height/2)+120); 
-
+        ctx.fillText('Music', ((canvas.width/2)+100), (canvas.height/2)+120); 
         ctx.fillStyle = "#c3c3c3";
-        ctx.fillRect(((canvas.width/2)-48), (canvas.height/2)+120-20, 100, 26);
+        ctx.fillRect(((canvas.width/2)+250-48), (canvas.height/2)+120-20, 100, 26);
+        ctx.fillStyle = "#c3c3c3";
+        ctx.fillRect(((canvas.width/2)-48 - 100), (canvas.height/2)+120-20, 100, 26);
         ctx.fillStyle = "#c3c3c3";
         ctx.fillRect(((canvas.width/2)-250-48), (canvas.height/2)+120-20, 100, 26);
+        ctx.fillStyle = "#c3c3c3";
+        ctx.fillRect(((canvas.width/2)-250-48), (canvas.height/2)+250-20, 100, 26);
 
         ctx.fillStyle = "black";
 
-        ctx.fillText('Hardware', (canvas.width/2), (canvas.height/2)+120);
+        ctx.fillText('Hardware', (canvas.width/2)-100, (canvas.height/2)+120);
     
         ctx.fillText('Software', ((canvas.width/2)-250), (canvas.height/2)+120);
     
-       
+        ctx.fillText('Contact', ((canvas.width/2)+250), (canvas.height/2)+120);
+
+      break;
+      case 3:
+        ctx.fillStyle = "#0000a8";
+        ctx.fillRect(((canvas.width/2)+250-48), (canvas.height/2)+120-20, 100, 26);
+        ctx.fillStyle = "white";
+        ctx.fillText('Contact', ((canvas.width/2)+250), (canvas.height/2)+120); 
+        ctx.fillStyle = "#c3c3c3";
+        ctx.fillRect(((canvas.width/2)+100-48), (canvas.height/2)+120-20, 100, 26);
+        ctx.fillStyle = "#c3c3c3";
+        ctx.fillRect(((canvas.width/2)-48 - 100), (canvas.height/2)+120-20, 100, 26);
+        ctx.fillStyle = "#c3c3c3";
+        ctx.fillRect(((canvas.width/2)-250-48), (canvas.height/2)+120-20, 100, 26);
+
+
+        ctx.fillStyle = "black";
+
+        ctx.fillText('Hardware', (canvas.width/2)-100, (canvas.height/2)+120);
+    
+        ctx.fillText('Software', ((canvas.width/2)-250), (canvas.height/2)+120);
+    
+        ctx.fillText('Music', ((canvas.width/2)+100), (canvas.height/2)+120);
 
       break;
 
