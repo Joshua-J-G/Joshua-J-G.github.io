@@ -6,9 +6,9 @@
 //fix
 //import * as THREE from 'https://threejs.org/build/three.js';
 
-import * as THREE from 'https://threejs.org/build/three.js';
+//import * as THREE from 'three';
 //import { GLTFLoader } from 'GLTFLoader';
-import { GLTFLoader } from './GLTFLoader.js';
+//import { GLTFLoader } from 'three-gltf-loader';
 
 var Objects;
 
@@ -82,7 +82,7 @@ const Canvas = new THREE.Texture(ctx.canvas);
 
 function LoadGLTF()
 {
-  const loader = new GLTFLoader();
+  const loader = new THREE.GLTFLoader();
   loader.load( "./src/Models/CRT/port.glb", function ( gltf ) {
     Objects = gltf.scene; 
     Objects.rotation.y = -Math.PI / 2;
